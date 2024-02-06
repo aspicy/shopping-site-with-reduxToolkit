@@ -1,6 +1,7 @@
 import { 
     CheckoutContainer,
     CheckoutHeader,
+    EmptyCartMessage,
     HeaderBlock,
     Total,
     ClearCartButton
@@ -42,11 +43,13 @@ const Checkout = () => {
                 </HeaderBlock>
             </CheckoutHeader>
             {
+                cartItems.length > 0 ?
                 cartItems.map((cartItem) => {
                     return (
                         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
                     )
-                })
+                }) :
+                (<EmptyCartMessage>Your cart is empty!</EmptyCartMessage>)
             }
             <Total>Total: ${cartTotal}</Total>
             <ClearCartButton onClick={clearWholeCart}>Clear Cart</ClearCartButton>

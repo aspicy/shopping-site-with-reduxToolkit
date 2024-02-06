@@ -18,6 +18,11 @@ export const CheckoutHeader = styled.div`
   border-bottom: 1px solid darkgrey;
 `;
 
+export const EmptyCartMessage = styled.span`
+  font-size: 2rem;
+  padding-top: 2rem;
+`
+
 export const HeaderBlock = styled.div`
   text-transform: capitalize;
   width: 23%;
