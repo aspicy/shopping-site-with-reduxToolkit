@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Button from '../../components/button/button.component';
+import { Link } from 'react-router-dom';
 
 export const CheckoutContainer = styled.div`
   width: 55%;
@@ -41,3 +42,13 @@ export const Total = styled.span`
 export const ClearCartButton = styled(Button)`
   color: red;
 `
+
+export const NavLink = styled(Link)`
+  margin-top: 2rem;
+`
+
+export const SignInButton = styled(Button)`
+  font-size: 2rem;
+`
+
+
