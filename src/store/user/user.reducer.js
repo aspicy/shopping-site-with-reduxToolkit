@@ -4,7 +4,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const INITIAL_STATE = {
     currentUser: null,
     isLoading: false,
-    error: null
+    error: null,
+    isSignedIn: false,
+    redirectLocation: null
 }
 
 export const userSlice = createSlice({
@@ -18,10 +20,12 @@ export const userSlice = createSlice({
         googleSignInStart(){},
         emailSignInStart(state, action){},
         signInSuccess(state, action){
-            state.currentUser = action.payload
+            state.currentUser = action.payload;
+            state.isSignedIn = true
         },
         signInFailed(state, action){
             state.error = action.payload
+            state.isSignedIn = false
         },
         signUpStart(state, action){},
         signUpSuccess(state, action){},
@@ -30,12 +34,15 @@ export const userSlice = createSlice({
         },
         signOutStart(){},
         signOutSuccess(state, action){
-            state.currentUser = null
+            state.currentUser = null;
+            state.isSignedIn = false
         },
         signOutFailed(state, action){
             state.error = action.payload
+        },
+        setRedirectLocation(state, action) {
+            state.redirectLocation = action.payload
         }
-
     }
 });
 
@@ -51,7 +58,8 @@ export const {
     signUpFailed,
     signOutStart,
     signOutSuccess,
-    signOutFailed
+    signOutFailed,
+    setRedirectLocation
 } = userSlice.actions;
 
 export const userReducer = userSlice.reducer;
