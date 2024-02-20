@@ -4,7 +4,7 @@ import { Outlet, Link, useLocation } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux";
 
 import CartIcon from '../../components/cart-icon/cart-icon.component';
-import CrownLogo from '../../assets/crown.svg' // Can Use vite-svg-loader to import svg as react component
+import UrbanFitLogo from '../../assets/urban-fit-logo.svg' // Can Use vite-svg-loader to import svg as react component
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
 import { selectCurrentUser } from "../../store/user/user.selector";
@@ -35,7 +35,7 @@ const Navigation = () => {
     <Fragment>
       <NavigationContainer>
         <LogoContainer to='/'>
-          <img src={CrownLogo} alt='Logo' className='logo' />
+          <img src={UrbanFitLogo} alt='Logo' className='logo' />
         </LogoContainer>
         <NavLinks>
           <NavLink to='/shop'>
