@@ -45,10 +45,11 @@ export const Footer = styled.div`
 `;
 
 export const Name = styled.span`
-  width: 90%;
+  width: 80%;
   margin-bottom: 15px;
 `;
 
 export const Price = styled.span`
-  width: 10%;
+  width: 20%;
+  text-align: end;
 `;
